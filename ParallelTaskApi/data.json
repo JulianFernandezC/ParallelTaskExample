@@ -1,5 +1,5 @@
 ﻿{
-  "courses": [ "Math", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
+  "courses": [ "Math", "Science", "Literature", "Music", "Physics"],
   "names": [
     "Noah",
     "Liam",

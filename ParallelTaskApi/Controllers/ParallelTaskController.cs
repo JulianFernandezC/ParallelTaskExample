@@ -15,10 +15,9 @@ namespace ParallelTaskApi.Controllers
             _parallelService = parallelService;
         }
 
-        [HttpPost("GetImportanceFromFile")]
+        [HttpPost("ExecuteInsertTasks")]
         public async Task<bool> ExecuteParallelTasks()
         {
-            
             return await _parallelService.ExecuteTasks();
         }
     }

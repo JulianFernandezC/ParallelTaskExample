@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace ParallelTaskApi.Utils
 {
@@ -15,21 +16,21 @@ namespace ParallelTaskApi.Utils
             }
         }
 
-        public string GenerateName(RandomStringList listRandomString)
+        public Task<string> GenerateName(RandomStringList listRandomString)
         {
             Random rand = new Random();
-            return listRandomString.Names[rand.Next(listRandomString.Names.Count)];
+            return Task.FromResult(listRandomString.Names[rand.Next(listRandomString.Names.Count)]);
         }
 
-        public string GenerateSurName(RandomStringList listRandomString)
+        public Task<string> GenerateSurName(RandomStringList listRandomString)
         {
             Random rand = new Random();
-            return listRandomString.Surnames[rand.Next(listRandomString.Surnames.Count)];
+            return Task.FromResult(listRandomString.Surnames[rand.Next(listRandomString.Surnames.Count)]);
         }
-        public string GenerateCourse(RandomStringList listRandomString)
+        public Task<string> GenerateCourse(RandomStringList listRandomString)
         {
             Random rand = new Random();
-            return (listRandomString.Surnames[rand.Next(listRandomString.Courses.Count)] + "-" + rand.Next(1,100));
+            return Task.FromResult((listRandomString.Courses[rand.Next(listRandomString.Courses.Count)] + "-" + rand.Next(1,100)));
         }
     }
 }
